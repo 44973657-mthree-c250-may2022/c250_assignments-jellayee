@@ -64,29 +64,36 @@ class Order:
     def total_price(self):
         
     
-    
-        
-        
- 
 def user_input_burger():
     b = Burger()
+    patty_menu = ['chicken', 'fish', 'beef']
     #ask user for input and store it in burger object 
     while True:
-        try:
-            b.patty = input('What patty do you want? Chicken, Fish or Beef?').lower()
-        except:
+        b.patty = input('What patty do you want? Chicken, Fish or Beef?').lower()
+        if b.patty not in patty_menu:
             print('This is an invalid choice. Please try again!')
             continue
-        try:
-            b.condiments = input('Do you want chilli? Yes/No').lower()
-        except:
+    while True:
+        b.condiments = input('Do you want chilli? Yes/No').lower()
+        if b.condiments not in ['yes', 'no']:
             print('This is an invalid choice. Please try again!')
             continue  
     return b
  
 def user_input_drink():
     d = Drink()
-    #ask user for input and store it in drink object 
+    drink_menu = ['milkshake' , 'coke', 'ice tea']
+    #ask user for input and store it in drink object
+    while True:
+        b.drink_type = input('What drink do you want? Milkshake, Coke or Ice Tea?').lower()
+        if b.drink_type not in drink_menu:
+            print('This is an invalid choice. Please try again!')
+            continue
+    while True:
+        b.size = input('What drink size do you want? M or L').lower()
+        if b.size not in ['m', 'l']:
+            print('This is an invalid choice. Please try again!')
+            continue      
     return d
  
 def user_input_side():
